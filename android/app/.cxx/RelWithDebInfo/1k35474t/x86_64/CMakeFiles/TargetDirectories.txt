@@ -1,0 +1,2 @@
+C:/Users/rizwan rn/Downloads/Deman/Demandium-momux- V3.1/User app and web/android/app/.cxx/RelWithDebInfo/1k35474t/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/rizwan rn/Downloads/Deman/Demandium-momux- V3.1/User app and web/android/app/.cxx/RelWithDebInfo/1k35474t/x86_64/CMakeFiles/rebuild_cache.dir

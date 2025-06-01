@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "28218724678",
+    "project_id": "servicerajuwebapp",
+    "storage_bucket": "servicerajuwebapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28218724678:android:1bff63c68450fcc62c5547",
+        "android_client_info": {
+          "package_name": "com.serviceraju.user"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3XCFiD8lfyuPzL0VAqSsM8sxsd0bfX98"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
