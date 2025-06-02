@@ -11,6 +11,8 @@ class LocationRepo {
         "${AppConstants.addressUri}?limit=100&offset=1&guest_id=${Get.find<SplashController>().getGuestId()}");
   }
 
+  //'12.304760131491209', '76.64919736199661'
+
   Future<Response> getZone(String lat, String lng) async {
     return await apiClient.getData('${AppConstants.zoneUri}?lat=$lat&lng=$lng',
         headers: AppConstants.configHeader);
