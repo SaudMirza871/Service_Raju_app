@@ -89,6 +89,14 @@ Future<String?> initDynamicLinks() async {
 
 class _MyAppState extends State<MyApp> {
   void _route() async {
+
+
+    var address = {"id":'1',"address_type":"others","address_label":"home","contact_person_name":"","contact_person_number":"","address":"Mysore City Bus Stand, Devaraja Mohalla, Sayyaji Rao Rd, Agrahara, CFTRI Campus, Chamrajpura, Mysuru, Karnataka 570001, India","lat":"12.307638083269271","lon":"76.65354743604378","city":"Mysuru","zip_code":"570001","country":"India"
+    ,"zone_id":"916b5424-a700-46d6-9bc0-e79ef73ad528","_method":null,"street":"Sayyaji Rao Road","house":"","floor":null,"available_service_count":94};
+   
+     AddressModel addressModel = AddressModel.fromJson(address);
+    Get.find<LocationController>().saveUserAddress(addressModel);
+
     Get.find<SplashController>().getConfigData().then((success) async {
       if (Get.find<LocationController>().getUserAddress() != null) {
         AddressModel addressModel =

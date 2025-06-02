@@ -222,6 +222,40 @@ class LocationController extends GetxController implements GetxService {
     return addressModel;
   }
 
+    Future<ZoneResponseModel> getStaticZone(bool markerLoad,
+      {bool isLoading = false}) async {
+    if (!isLoading) {
+      _isLoading = true;
+    }
+    update();
+    ZoneResponseModel responseModel;
+    Response response = await locationRepo.getZone('12.304760131491209', '76.64919736199661');
+
+    int totalServiceCountInZone = 0;
+    if (response.statusCode == 200 && response.body['content'] != null) {
+      _inZone = true;
+      _zoneID = response.body['content']['zone']['id'];
+
+      if (response.body['content']['available_services_count'] != null) {
+        totalServiceCountInZone = int.tryParse(response.body['content']
+                    ['available_services_count']
+                .toString()) ??
+            0;
+      }
+      responseModel =
+          ZoneResponseModel(true, '', _zoneID, totalServiceCountInZone);
+    } else {
+      _inZone = false;
+      responseModel = ZoneResponseModel(
+          false, response.body['message'], '', totalServiceCountInZone);
+    }
+    if (!isLoading) {
+      _isLoading = false;
+    }
+    update();
+    return responseModel;
+  }
+
   Future<ZoneResponseModel> getZone(String lat, String long, bool markerLoad,
       {bool isLoading = false}) async {
     if (!isLoading) {
